@@ -6,6 +6,7 @@ config.params = {
 };
 
 config.services = ['sauce'];
+console.log("PROCESS", process.env.HELLO)
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 
