@@ -14,21 +14,24 @@ jobs:
       - image: node
     steps:
       - run:
-          name: Versions
-          command: npm version
+        name: Versions
+        command: npm version
       - checkout
       - run:
-          name: Install dependencies
-          command: npm install
+        name: Install dependencies
+        command: npm install
       - run:
-          name: Lint
-          command: npm run lint
+        name: Lint
+        command: npm run lint
       - run:
-          name: Test
-          command: npm test
+        name: Test
+        command: npm test
       - run:
-          name: Integration
-          command: npm run wdio-ci
+        name: Compile
+        command: npm run compile
+      - run:
+        name: Integration
+        command: npm run wdio-ci
 
   node-v6:
     <<: *node-base

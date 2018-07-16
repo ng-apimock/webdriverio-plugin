@@ -13,8 +13,8 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 config.capabilities = [{
     browserName: 'chrome',
     name: 'ngApimock - webdriverio',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    build: process.env.TRAVIS_BUILD_NUMBER,
+    'tunnel-identifier': process.env.CIRCLE_BUILD_URL,
+    build: process.env.CIRCLE_BUILD_NUM,
     chromeOptions: {
         args: ['--no-sandbox', '--test-type=browser'],
         prefs: {
