@@ -47,7 +47,7 @@
                 const expected = fs.readFileSync(path.join(__dirname, '..', responses.getItems[scenario].file));
                 return actual.equals(expected);
             } else {
-                return browser.params.environment === 'CI'
+                return browser.options.params.environment === 'CI'
             }
         }, 5000, 'expected download to be completed');
     }
