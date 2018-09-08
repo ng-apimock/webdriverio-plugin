@@ -1,7 +1,7 @@
 {
   "name": "@ng-apimock/webdriverio-plugin",
   "description": "Webdriverio plugin for ng-apimock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
   "author": {
     "name": "Mischa Dasberg",
@@ -38,8 +38,8 @@
     "plugin"
   ],
   "devDependencies": {
-    "@ng-apimock/core": "1.0.2",
-    "@ng-apimock/test-application": "1.0.3",
+    "@ng-apimock/core": "1.0.4",
+    "@ng-apimock/test-application": "1.0.5",
     "@types/chai": "4.1.4",
     "@types/cucumber": "4.0.4",
     "@types/jasmine": "2.8.8",
@@ -48,7 +48,7 @@
     "chai": "4.1.2",
     "connect": "3.6.6",
     "cucumber": "4.2.1",
-    "cucumberjs-junitxml": "^1.0.0",
+    "cucumberjs-junitxml": "1.0.0",
     "jasmine-ts": "0.2.1",
     "serve-static": "1.13.2",
     "sinon": "6.2.0",
@@ -61,7 +61,7 @@
     "webdriverio": "4.13.2"
   },
   "dependencies": {
-    "@ng-apimock/base-client": "1.0.1"
+    "@ng-apimock/base-client": "1.0.2"
   },
   "peerDependencies": {
     "webdriverio": "4.x"
