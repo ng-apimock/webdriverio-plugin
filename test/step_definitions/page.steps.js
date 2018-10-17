@@ -59,7 +59,7 @@
     async function checkReturnedResponseForGetItems(scenario) {
         if (responses.getItems[scenario].data !== undefined) {
             const data = await page.data.getText();
-            expect(JSON.parse(data)).to.deep.equal(responses.getItems[scenario].data);
+            expect(await JSON.parse(data)).to.deep.equal(responses.getItems[scenario].data);
         }
         const status = await page.status.getText();
         expect(parseInt(status)).to.equal(responses.getItems[scenario].status);
