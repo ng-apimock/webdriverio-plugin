@@ -38,8 +38,8 @@
     "plugin"
   ],
   "devDependencies": {
-    "@ng-apimock/core": "1.0.8",
-    "@ng-apimock/test-application": "1.0.6",
+    "@ng-apimock/core": "1.0.9",
+    "@ng-apimock/test-application": "1.0.7",
     "@types/chai": "4.1.6",
     "@types/cucumber": "4.0.4",
     "@types/jasmine": "2.8.9",
