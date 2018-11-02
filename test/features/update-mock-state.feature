@@ -11,7 +11,7 @@ Feature: Update mock state
   in order to run the application against mocks.
 
   Background:
-    Given the following mock state
+    Given the following mocks state:
       | name      | scenario          |
       | get items | crypto-currencies |
       | post item | ok                |

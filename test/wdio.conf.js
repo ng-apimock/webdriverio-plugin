@@ -1,15 +1,21 @@
 const path = require('path');
 
-exports.config = {
+const plugin = require.resolve(path.join(process.cwd(), 'dist', 'index.js'));
+
+const config = {
     default_directory: '/tmp',
     specs: [
-        path.join(__dirname, 'features', '*.feature')
+        path.join(__dirname, 'features', '**', '*.feature')
     ],
     sync: false,
     baseUrl: 'http://localhost:9900/',
     framework: 'cucumber',
     cucumberOpts: {
-        require: [path.join(__dirname, 'step_definitions/*.steps.js')]
+        compiler: ["ts:ts-node/register"],
+        require: [
+            path.join(__dirname, 'step_definitions', '*.steps.ts'),
+            path.join(__dirname, 'cucumber.helper.ts')
+        ]
     },
     onPrepare: () => {
         const child_process = require('child_process');
@@ -23,9 +29,15 @@ exports.config = {
         const chai = require('chai');
         global.chai = chai;
         global.expect = chai.expect;
-        global.ngApimock = await require(path.join(process.cwd(), 'dist', 'index.js'));
     },
     onComplete: () => {
         server.kill();
-    }
+    },
+    plugins: {}
 };
+
+config.plugins[plugin] = {
+    globalName: 'client'
+};
+
+exports.config = config;

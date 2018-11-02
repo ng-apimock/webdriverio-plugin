@@ -4,7 +4,7 @@ Feature: Default responses
   - When an api call matches the mock request, the default response should be returned.
 
   Background:
-    Given the following mock state
+    Given the following mocks state:
       | name      | scenario          |
       | get items | crypto-currencies |
       | post item | ok                |
