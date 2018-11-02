@@ -25,7 +25,7 @@ export class PagePO {
         await browser.waitUntil(async () => {
             const header = await browser.getText('h1');
             return header.indexOf('ng-apimock test example app') > -1;
-        }, 5000);
+        }, 10000);
     }
 }
 
