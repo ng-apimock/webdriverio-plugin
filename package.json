@@ -1,13 +1,14 @@
 {
   "name": "@ng-apimock/webdriverio-plugin",
   "description": "Webdriverio plugin for ng-apimock",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
   "author": {
     "name": "Mischa Dasberg",
     "email": "mischa@dasberg.nl"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "precompile": "rm -rf dist",
     "compile": "tsc",
@@ -38,19 +39,19 @@
     "plugin"
   ],
   "devDependencies": {
-    "@ng-apimock/core": "1.0.11",
+    "@ng-apimock/core": "1.0.12",
     "@ng-apimock/test-application": "1.0.9",
     "@types/chai": "4.1.7",
     "@types/cucumber": "4.0.4",
     "@types/fs-extra": "5.0.4",
-    "@types/jasmine": "2.8.9",
+    "@types/jasmine": "2.8.11",
     "@types/sinon": "5.0.5",
     "@types/webdriverio": "4.13.0",
     "chai": "4.2.0",
     "connect": "3.6.6",
     "cucumber": "5.0.2",
     "cucumberjs-junitxml": "1.0.0",
-    "fs-extra": "7.0.0",
+    "fs-extra": "7.0.1",
     "jasmine": "3.3.0",
     "jasmine-ts": "0.3.0",
     "serve-static": "1.13.2",
@@ -58,14 +59,14 @@
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.1.5",
+    "typescript": "3.1.6",
     "vrsource-tslint-rules": "5.8.2",
     "wdio-cucumber-framework": "2.2.8",
-    "wdio-sauce-service": "0.4.12",
+    "wdio-sauce-service": "0.4.13",
     "webdriverio": "4.14.0"
   },
   "dependencies": {
-    "@ng-apimock/base-client": "1.0.6"
+    "@ng-apimock/base-client": "1.0.7"
   },
   "peerDependencies": {
     "webdriverio": "4.x"

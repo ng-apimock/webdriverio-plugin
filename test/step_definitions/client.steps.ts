@@ -1,9 +1,9 @@
 import {After, Given, When} from 'cucumber';
 import {expect} from 'chai';
 
-import {NgApimock} from '../ng-apimock';
+import {Client} from '@ng-apimock/base-client';
 
-declare const client: NgApimock;
+declare const client: Client;
 
 Given(/^the following mocks state:$/, checkMockState);
 Given(/^the following variables state:$/, checkVariablesState);

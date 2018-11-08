@@ -1,4 +1,5 @@
 import WebdriverIOClient from './webdriverio';
+import {Client} from '@ng-apimock/base-client';
 
 let plugin: WebdriverIOClient;
 
@@ -8,7 +9,7 @@ let plugin: WebdriverIOClient;
  * @param {{globalName?: string}} options The options.
  */
 async function init(webdriverInstance: any, options: any) {
-    const globalName =  (options && options.globalName)
+    const globalName = (options && options.globalName)
         ? options.globalName
         : 'ngApimock';
 
@@ -21,3 +22,4 @@ async function init(webdriverInstance: any, options: any) {
 }
 
 exports.init = init;
+export {Client};
