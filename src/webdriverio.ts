@@ -1,4 +1,4 @@
-import BaseClient from '@ng-apimock/base-client';
+import {BaseClient} from '@ng-apimock/base-client';
 
 /** Webdriver.io client for apimock. */
 class WebdriverIOClient extends BaseClient {
@@ -14,7 +14,7 @@ class WebdriverIOClient extends BaseClient {
 
     /** {@inheritDoc}. */
     async setCookie(name: string, value: string): Promise<any> {
-        return await browser.setCookie({name: name, value: value});
+        return await browser.setCookie({ name: name, value: value });
     }
 }
 
