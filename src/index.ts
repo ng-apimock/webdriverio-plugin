@@ -1,4 +1,4 @@
-import WebdriverIOClient from './webdriverio';
+import {WebdriverIOClient} from './webdriverio';
 import {Client} from '@ng-apimock/base-client';
 
 let plugin: WebdriverIOClient;

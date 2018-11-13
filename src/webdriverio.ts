@@ -1,7 +1,7 @@
 import {BaseClient} from '@ng-apimock/base-client';
 
 /** Webdriver.io client for apimock. */
-class WebdriverIOClient extends BaseClient {
+export class WebdriverIOClient extends BaseClient {
     /** Constructor.*/
     constructor() {
         super(browser.options.baseUrl);
@@ -17,5 +17,3 @@ class WebdriverIOClient extends BaseClient {
         return await browser.setCookie({ name: name, value: value });
     }
 }
-
-export default WebdriverIOClient;

@@ -1,6 +1,6 @@
 import {assert, SinonStub, stub} from 'sinon';
 
-import WebdriverIOClient from './webdriverio';
+import {WebdriverIOClient} from './webdriverio';
 
 describe('WebdriverIOClient', () => {
     const BASE_URL = 'http://localhost:9000';
