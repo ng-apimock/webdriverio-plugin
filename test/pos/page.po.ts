@@ -20,12 +20,11 @@ export class PagePO {
     }
 
     static async open(): Promise<any> {
-        const url = '/index.html';
-        await browser.url(url);
+        await browser.url('/index.html');
         await browser.waitUntil(async () => {
-            return browser.getText('h1')
-                .then((text) => text.indexOf('ng-apimock test example app') > -1);
-        }, 10000, 'page not loaded after 10s');
+            const header = await browser.getText('h1');
+            return header.indexOf('ng-apimock test example app') > -1;
+        }, 20000, 'page not loaded after 20s');
     }
 }
 
