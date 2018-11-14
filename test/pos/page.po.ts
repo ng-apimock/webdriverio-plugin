@@ -23,9 +23,9 @@ export class PagePO {
         const url = '/index.html';
         await browser.url(url);
         await browser.waitUntil(async () => {
-            const header = await browser.getText('h1');
-            return header.indexOf('ng-apimock test example app') > -1;
-        }, 10000);
+            return browser.getText('h1')
+                .then((text) => text.indexOf('ng-apimock test example app') > -1);
+        }, 10000, 'page not loaded after 10s');
     }
 }
 
