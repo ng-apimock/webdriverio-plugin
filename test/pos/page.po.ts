@@ -1,3 +1,5 @@
+import * as fs from 'fs-extra';
+
 export class PagePO {
     static get data() {
         return browser.element('.data');
@@ -21,6 +23,7 @@ export class PagePO {
 
     static async open(): Promise<any> {
         await browser.url('/index.html');
+        await browser.url('/index.html'); // make sure navigation worked
         await browser.waitUntil(async () => {
             const header = await browser.getText('h1');
             return header.indexOf('ng-apimock test example app') > -1;
