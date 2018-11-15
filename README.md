@@ -1,4 +1,4 @@
-# webdriverio-plugin
+# webdriverio-plugin [![CircleCI](https://circleci.com/gh/ng-apimock/webdriverio-plugin.svg?style=svg)](https://circleci.com/gh/ng-apimock/webdriverio-plugin)  [![dependency Status](https://img.shields.io/david/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin) [![devDependency Status](https://img.shields.io/david/dev/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin#info=devDependencies)
 webdriver plugin for @ng-apimock/core
 
 ### Usage
