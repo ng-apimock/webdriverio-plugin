@@ -4,6 +4,7 @@ config.params = {
     environment: 'CI',
     default_directory: '/tmp'
 };
+config.maxInstances = 5;
 
 config.services = ['sauce'];
 config.user = process.env.SAUCE_USERNAME;
@@ -19,7 +20,6 @@ config.sauceConnectOpts = {
 config.capabilities = [{
     browserName: 'chrome',
     name: 'ngApimock - webdriverio',
-    build: process.env.CIRCLE_BUILD_NUM,
     chromeOptions: {
         args: ['--no-sandbox', '--test-type=browser'],
         prefs: {
