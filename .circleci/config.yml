@@ -3,8 +3,12 @@ workflows:
   build:
     jobs:
     - node-v8
-    - node-v9
-    - node-v10
+    - node-v9:
+        requires:
+        - node-v8
+    - node-v10:
+        requires:
+        - node-v9
 
 version: 2
 jobs:
