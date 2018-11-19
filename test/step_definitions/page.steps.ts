@@ -6,7 +6,7 @@ import * as path from 'path';
 
 import {PagePO} from '../pos/page.po';
 
-const mocksDirectory = path.join(require.resolve('@ng-apimock/test-application'), '..', '..', 'mocks');
+const mocksDirectory = path.join(require.resolve('@ng-apimock/test-application'), '..', 'mocks');
 let responses: any;
 
 Before(async () => {

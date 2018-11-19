@@ -9,7 +9,7 @@ Enable this plugin in your config file:
 ```js
 exports.config = {
     plugins: {
-       '@ng-apimock/webdriver-plugin': {
+       '@ng-apimock/webdriverio-plugin': {
            globalName: 'ngApimockWebdriverioPlugin' // optional option (defaults to ngApimock)  
        } 
     }
