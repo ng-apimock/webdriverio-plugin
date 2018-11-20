@@ -1,20 +1,18 @@
-import * as fs from 'fs-extra';
-
 export class PagePO {
     static get data() {
-        return browser.element('.data');
+        return browser.getText('.data');
     }
 
     static get status() {
-        return browser.element('.status');
+        return browser.getText('.status');
     }
 
     static get done() {
-        return browser.element('.done');
+        return browser.getText('.done');
     }
 
-    static get input() {
-        return browser.element('#item');
+    static async input(data: string) {
+        await browser.setValue("#item", data);
     }
 
     static get buttons() {
