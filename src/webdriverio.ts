@@ -17,3 +17,5 @@ export class WebdriverIOClient extends BaseClient {
         return await browser.setCookie({ name: name, value: value });
     }
 }
+
+declare const browser: any;

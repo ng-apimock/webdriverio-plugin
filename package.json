@@ -1,7 +1,7 @@
 {
   "name": "@ng-apimock/webdriverio-plugin",
   "description": "Webdriverio plugin for ng-apimock",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
   "author": {
     "name": "Mischa Dasberg",
@@ -24,12 +24,7 @@
   "bugs": {
     "url": "https://github.com/ng-apimock/webdriverio-plugin/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/ng-apimock/webdriverio-plugin/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "keywords": [
     "apimock",
     "ng-apimock",
@@ -39,34 +34,34 @@
     "plugin"
   ],
   "devDependencies": {
-    "@ng-apimock/core": "1.0.15",
-    "@ng-apimock/test-application": "1.0.12",
+    "@ng-apimock/core": "1.0.18",
+    "@ng-apimock/test-application": "1.0.13",
     "@types/chai": "4.1.7",
     "@types/cucumber": "4.0.4",
     "@types/fs-extra": "5.0.4",
-    "@types/jasmine": "3.3.0",
-    "@types/sinon": "5.0.6",
-    "@types/webdriverio": "4.13.0",
+    "@types/jasmine": "3.3.8",
+    "@types/sinon": "7.0.5",
+    "@types/webdriverio": "5.0.0",
     "chai": "4.2.0",
     "connect": "3.6.6",
-    "cucumber": "5.0.2",
+    "cucumber": "5.1.0",
     "cucumberjs-junitxml": "1.0.0",
     "fs-extra": "7.0.1",
-    "jasmine": "3.3.0",
+    "jasmine": "3.3.1",
     "jasmine-ts": "0.3.0",
     "serve-static": "1.13.2",
-    "sinon": "7.1.1",
-    "ts-node": "7.0.1",
-    "tslint": "5.11.0",
+    "sinon": "7.2.3",
+    "ts-node": "8.0.2",
+    "tslint": "5.12.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.1.6",
-    "vrsource-tslint-rules": "5.8.2",
+    "typescript": "3.2.4",
+    "vrsource-tslint-rules": "6.0.0",
     "wdio-cucumber-framework": "2.2.8",
-    "wdio-sauce-service": "0.4.13",
-    "webdriverio": "4.14.0"
+    "wdio-sauce-service": "0.4.14",
+    "webdriverio": "5.4.7"
   },
   "dependencies": {
-    "@ng-apimock/base-client": "1.0.10"
+    "@ng-apimock/base-client": "1.0.11"
   },
   "peerDependencies": {
     "webdriverio": "4.x"

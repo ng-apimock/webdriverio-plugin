@@ -8,7 +8,7 @@ const config = {
         path.join(__dirname, 'features', '**', '*.feature')
     ],
     sync: false,
-    baseUrl: 'http://localhost:9900/',
+    baseUrl: 'http://localhost:9999/',
     framework: 'cucumber',
     cucumberOpts: {
         compiler: ["ts:ts-node/register"],
