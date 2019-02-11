@@ -1,7 +1,7 @@
 {
   "name": "@ng-apimock/webdriverio-plugin",
   "description": "Webdriverio plugin for ng-apimock",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
   "author": {
     "name": "Mischa Dasberg",
@@ -41,7 +41,7 @@
     "@types/fs-extra": "5.0.4",
     "@types/jasmine": "3.3.8",
     "@types/sinon": "7.0.5",
-    "@types/webdriverio": "5.0.0",
+    "@types/webdriverio": "4.13.0",
     "chai": "4.2.0",
     "connect": "3.6.6",
     "cucumber": "5.1.0",
@@ -54,11 +54,11 @@
     "ts-node": "8.0.2",
     "tslint": "5.12.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.2.4",
+    "typescript": "3.3.3",
     "vrsource-tslint-rules": "6.0.0",
     "wdio-cucumber-framework": "2.2.8",
     "wdio-sauce-service": "0.4.14",
-    "webdriverio": "5.4.7"
+    "webdriverio": "4.14.0"
   },
   "dependencies": {
     "@ng-apimock/base-client": "1.0.11"
