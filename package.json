@@ -1,7 +1,7 @@
 {
   "name": "@ng-apimock/webdriverio-plugin",
   "description": "Webdriverio plugin for ng-apimock",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
   "author": {
     "name": "Mischa Dasberg",
