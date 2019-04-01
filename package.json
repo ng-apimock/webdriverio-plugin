@@ -34,14 +34,14 @@
     "plugin"
   ],
   "devDependencies": {
-    "@ng-apimock/core": "1.0.18",
-    "@ng-apimock/test-application": "1.0.13",
+    "@ng-apimock/core": "1.0.20",
+    "@ng-apimock/test-application": "1.0.14",
     "@types/chai": "4.1.7",
-    "@types/cucumber": "4.0.4",
-    "@types/fs-extra": "5.0.4",
-    "@types/jasmine": "3.3.8",
-    "@types/sinon": "7.0.5",
-    "@types/webdriverio": "4.13.0",
+    "@types/cucumber": "4.0.5",
+    "@types/fs-extra": "5.0.5",
+    "@types/jasmine": "3.3.12",
+    "@types/sinon": "7.0.11",
+    "@types/webdriverio": "4.13.3",
     "chai": "4.2.0",
     "connect": "3.6.6",
     "cucumber": "5.1.0",
@@ -50,18 +50,18 @@
     "jasmine": "3.3.1",
     "jasmine-ts": "0.3.0",
     "serve-static": "1.13.2",
-    "sinon": "7.2.3",
-    "ts-node": "8.0.2",
-    "tslint": "5.12.1",
+    "sinon": "7.3.1",
+    "ts-node": "8.0.3",
+    "tslint": "5.14.0",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.3.3",
+    "typescript": "3.4.1",
     "vrsource-tslint-rules": "6.0.0",
     "wdio-cucumber-framework": "2.2.8",
     "wdio-sauce-service": "0.4.14",
-    "webdriverio": "4.14.0"
+    "webdriverio": "4.14.4"
   },
   "dependencies": {
-    "@ng-apimock/base-client": "1.0.11"
+    "@ng-apimock/base-client": "1.0.12"
   },
   "peerDependencies": {
     "webdriverio": "4.x"
