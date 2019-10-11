@@ -4,15 +4,15 @@ declare var browser: WebdriverIOAsync.BrowserObject;
 
 export class PagePO {
     static async getData() {
-        return (await browser.$('.data')).getText();
+        return await (await browser.$('.data')).getText();
     }
 
     static async getStatus() {
-        return (await browser.$('.status')).getText();
+        return await (await browser.$('.status')).getText();
     }
 
     static async getDone() {
-        return (await browser.$('.done')).getText();
+        return await (await browser.$('.done')).getText();
     }
 
     static async input(data: string) {
