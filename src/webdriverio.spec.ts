@@ -5,7 +5,7 @@ import {WebdriverIOClient} from './webdriverio';
 describe('WebdriverIOClient', () => {
     const BASE_URL = 'http://localhost:9000';
     let browserGetProcessedConfigThenFn: any;
-    let browserSetCookieFn: SinonStub;
+    let browserSetCookiesFn: SinonStub;
     let browserUrlFn: SinonStub;
     let client: WebdriverIOClient;
     let deferredPromise: any;
@@ -14,7 +14,7 @@ describe('WebdriverIOClient', () => {
 
     beforeAll(() => {
         browserGetProcessedConfigThenFn = stub();
-        browserSetCookieFn = stub();
+        browserSetCookiesFn = stub();
         browserUrlFn = stub();
         deferredPromise = {};
 
@@ -23,13 +23,13 @@ describe('WebdriverIOClient', () => {
                 baseUrl: BASE_URL
             },
             url: browserUrlFn,
-            setCookie: browserSetCookieFn
+            setCookies: browserSetCookiesFn
         };
 
         resolveFn = stub();
         rejectFn = stub();
 
-        client = new WebdriverIOClient();
+        client = new WebdriverIOClient(BASE_URL);
     });
 
     describe('constructor', () =>
@@ -45,6 +45,6 @@ describe('WebdriverIOClient', () => {
     describe('setCookie', () =>
         it('sets the cookie', async () => {
             await client.setCookie('name', 'value');
-            assert.calledWith(browserSetCookieFn, { name: 'name', value: 'value' });
+            assert.calledWith(browserSetCookiesFn, { name: 'name', value: 'value' });
         }));
 });
