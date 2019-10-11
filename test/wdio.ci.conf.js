@@ -20,7 +20,7 @@ config.sauceConnectOpts = {
 config.capabilities = [{
     browserName: 'chrome',
     name: 'ngApimock - webdriverio',
-    chromeOptions: {
+    'goog:chromeOptions': {
         args: ['--no-sandbox', '--test-type=browser'],
         prefs: {
             'download': {
