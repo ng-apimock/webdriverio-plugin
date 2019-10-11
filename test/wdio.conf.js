@@ -8,6 +8,7 @@ const config = {
     sync: false,
     baseUrl: 'http://127.0.0.1:9999/',
     framework: 'cucumber',
+    logLevel: 'error',
     cucumberOpts: {
         requireModule: [
             () => {
