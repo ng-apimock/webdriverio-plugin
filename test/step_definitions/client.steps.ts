@@ -1,8 +1,10 @@
-import {After, Given, When} from 'cucumber';
-import {expect} from 'chai';
+import * as WebdriverIOAsync from 'webdriverio';
 
+import {expect} from 'chai';
+import {After, Given, When} from 'cucumber';
 import {Client} from '@ng-apimock/base-client';
 
+declare var browser: WebdriverIOAsync.BrowserObject;
 declare const client: Client;
 
 Given(/^the following mocks state:$/, checkMockState);

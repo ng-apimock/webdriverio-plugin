@@ -1,18 +1,22 @@
+import * as WebdriverIOAsync from 'webdriverio';
+
+declare var browser: WebdriverIOAsync.BrowserObject;
+
 export class PagePO {
-    static get data() {
-        return browser.getText('.data');
+    static async getData() {
+        return (await browser.$('.data')).getText();
     }
 
-    static get status() {
-        return browser.getText('.status');
+    static async getStatus() {
+        return (await browser.$('.status')).getText();
     }
 
-    static get done() {
-        return browser.getText('.done');
+    static async getDone() {
+        return (await browser.$('.done')).getText();
     }
 
     static async input(data: string) {
-        await browser.setValue("#item", data);
+        await (await browser.$('#item')).setValue(data);
     }
 
     static get buttons() {
@@ -21,9 +25,8 @@ export class PagePO {
 
     static async open(): Promise<any> {
         await browser.url('/index.html');
-        await browser.url('/index.html'); // make sure navigation worked
         await browser.waitUntil(async () => {
-            const header = await browser.getText('h1');
+            const header = await (await browser.$('h1')).getText();
             return header.indexOf('ng-apimock test example app') > -1;
         }, 20000, 'page not loaded after 20s');
     }
@@ -31,18 +34,18 @@ export class PagePO {
 
 export class PageButtons {
     get get() {
-        return browser.element('button*=get');
+        return browser.$('button*=get');
     }
 
     get binary() {
-        return browser.element('button*=binary');
+        return browser.$('button*=binary');
     }
 
     get getAsJsonp() {
-        return browser.element('button*=get as jsonp');
+        return browser.$('button*=get as jsonp');
     }
 
     get post() {
-        return browser.element('button*=post');
+        return browser.$('button*=post');
     }
 }
