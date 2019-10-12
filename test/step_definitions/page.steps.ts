@@ -45,6 +45,7 @@ async function checkItemsAreNotYetFetched(): Promise<any> {
 }
 
 async function checkResponseIsDownloaded(scenario: string): Promise<any> {
+    await waitForDone();
     await browser.waitUntil(async () => {
         const params = (browser as any).config.params;
         if (fs.existsSync(params.default_directory + '/test.pdf')) {
@@ -58,10 +59,12 @@ async function checkResponseIsDownloaded(scenario: string): Promise<any> {
 }
 
 async function checkResponseIsInterpolatedWithVariable(variable: string): Promise<any> {
+    await waitForDone();
     expect(await PagePO.getData()).to.contain(variable);
 }
 
 async function checkReturnedResponseForGetItems(scenario: string): Promise<any> {
+    await waitForDone();
     if (responses.getItems[scenario].data !== undefined) {
         const data = await PagePO.getData();
         expect(JSON.parse(data)).to.deep.equal(responses.getItems[scenario].data);
@@ -71,6 +74,7 @@ async function checkReturnedResponseForGetItems(scenario: string): Promise<any> 
 }
 
 async function checkReturnedResponseForPostItem(scenario: string): Promise<any> {
+    await waitForDone();
     if (responses.postItem[scenario].data !== undefined) {
         const data = await PagePO.getData();
         expect(JSON.parse(data)).to.deep.equal(responses.postItem[scenario].data)
@@ -88,14 +92,21 @@ async function enterAndPostItem(data: string): Promise<any> {
 }
 
 async function getTheItems(): Promise<any> {
-    (await PagePO.buttons.get).click();
-    await browser.pause(200);
+    await (await PagePO.buttons.get).click();
+    await browser.pause(500);
 }
 
 async function getTheItemsAsJsonp(): Promise<any> {
-    (await PagePO.buttons.getAsJsonp).click();
+    await (await PagePO.buttons.getAsJsonp).click();
+    await browser.pause(500);
 }
 
 async function openTestPage(): Promise<any> {
     await PagePO.open();
+}
+
+async function waitForDone(): Promise<any> {
+    await browser.waitUntil(async () => {
+        return (await PagePO.getDone()) === 'true';
+    }, 5000, 'expected status to be shown');
 }
