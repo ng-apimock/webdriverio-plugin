@@ -6,6 +6,7 @@ scripts
 
 # test
 **/*.spec.*
+test
 
 # configs
 tsconfig.json
