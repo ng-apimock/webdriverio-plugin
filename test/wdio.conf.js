@@ -1,7 +1,5 @@
 const path = require('path');
 
-const plugin = require.resolve(path.join(process.cwd(), 'dist', 'index.js'));
-
 const config = {
     default_directory: '/tmp',
     specs: [
@@ -10,8 +8,13 @@ const config = {
     sync: false,
     baseUrl: 'http://127.0.0.1:9999/',
     framework: 'cucumber',
+    logLevel: 'error',
     cucumberOpts: {
-        compiler: ["ts:ts-node/register"],
+        requireModule: [
+            () => {
+                require('ts-node').register({files: true})
+            }
+        ],
         require: [
             path.join(__dirname, 'step_definitions', '*.steps.ts'),
             path.join(__dirname, 'cucumber.helper.ts')
@@ -33,11 +36,7 @@ const config = {
     onComplete: () => {
         server.kill();
     },
-    plugins: {}
-};
-
-config.plugins[plugin] = {
-    globalName: 'client'
+    services: [['ng-apimock', {globalName: 'client'}]]
 };
 
 exports.config = config;
