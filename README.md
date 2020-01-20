@@ -1,5 +1,11 @@
-# webdriverio-plugin [![CircleCI](https://circleci.com/gh/ng-apimock/webdriverio-plugin.svg?style=svg)](https://circleci.com/gh/ng-apimock/webdriverio-plugin)  [![dependency Status](https://img.shields.io/david/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin) [![devDependency Status](https://img.shields.io/david/dev/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin#info=devDependencies)
+# wdio-ng-apimock-service [![CircleCI](https://circleci.com/gh/ng-apimock/webdriverio-plugin.svg?style=svg)](https://circleci.com/gh/ng-apimock/webdriverio-plugin)  [![dependency Status](https://img.shields.io/david/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin) [![devDependency Status](https://img.shields.io/david/dev/ng-apimock/webdriverio-plugin.svg)](https://david-dm.org/ng-apimock/webdriverio-plugin#info=devDependencies)
 webdriver plugin for @ng-apimock/core
+
+## Getting Started
+
+```shell
+npm install wdio-ng-apimock-service --save-dev
+```
 
 ### Usage
 This plugin connects to ng-apimock and makes the plugin functions available within the tests.
@@ -9,7 +15,7 @@ Enable this plugin in your config file:
 ```js
 exports.config = {
     services: [['ng-apimock'],  {
-           globalName: 'ngApimockWebdriverioPlugin' // optional option (defaults to ngApimock)  
+           globalName: 'ngApimock' // optional option (defaults to ngApimock)  
        }
     ]
 };
@@ -51,5 +57,5 @@ Resets all the mocks to the default state.
 ##### setMocksToPassThrough(): Promise<any>;
 Sets all the mocks to pass through.
 
-##### setPreset(name: string): Promise<any>;
-Sets the mocks and variables in the selected state.
+##### selectPreset(name: string): Promise<any>;
+Selects the mocks and variables in the selected state.
