@@ -1,50 +1,51 @@
-import {assert, SinonStub, stub} from 'sinon';
-
-import {WebdriverIOClient} from './webdriverio';
+import { WebdriverIOClient } from './webdriverio';
 
 describe('WebdriverIOClient', () => {
-    const BASE_URL = 'http://localhost:9000';
     let browserGetProcessedConfigThenFn: any;
-    let browserSetCookiesFn: SinonStub;
-    let browserUrlFn: SinonStub;
+    let browserSetCookiesFn: jest.Mock;
+    let browserUrlFn: jest.Mock;
     let client: WebdriverIOClient;
     let deferredPromise: any;
-    let rejectFn: SinonStub;
-    let resolveFn: SinonStub;
+    let rejectFn: jest.Mock;
+    let resolveFn: jest.Mock;
 
     beforeAll(() => {
-        browserGetProcessedConfigThenFn = stub();
-        browserSetCookiesFn = stub();
-        browserUrlFn = stub();
+        browserGetProcessedConfigThenFn = jest.fn();
+        browserSetCookiesFn = jest.fn();
+        browserUrlFn = jest.fn();
         deferredPromise = {};
 
         (global as any)['browser'] = {
             options: {
-                baseUrl: BASE_URL
+                baseUrl: 'http://localhost:9000'
             },
             url: browserUrlFn,
             setCookies: browserSetCookiesFn
         };
 
-        resolveFn = stub();
-        rejectFn = stub();
+        resolveFn = jest.fn();
+        rejectFn = jest.fn();
 
-        client = new WebdriverIOClient(BASE_URL);
+        client = new WebdriverIOClient('http://localhost:9000');
     });
 
-    describe('constructor', () =>
-        it('sets the baseUrl', () =>
-            expect(client.baseUrl).toBe(BASE_URL + '/ngapimock')));
+    describe('constructor', () => {
+        it('sets the baseUrl', () => {
+            expect(client.baseUrl).toBe('http://localhost:9000/ngapimock');
+        });
+    });
 
-    describe('openUrl', () =>
+    describe('openUrl', () => {
         it('opens the url', async () => {
             await client.openUrl('url');
-            assert.calledWith(browserUrlFn, 'url');
-        }));
+            expect(browserUrlFn).toHaveBeenCalledWith('url');
+        });
+    });
 
-    describe('setCookie', () =>
+    describe('setCookie', () => {
         it('sets the cookie', async () => {
             await client.setCookie('name', 'value');
-            assert.calledWith(browserSetCookiesFn, { name: 'name', value: 'value' });
-        }));
+            expect(browserSetCookiesFn).toHaveBeenCalledWith({ name: 'name', value: 'value' });
+        });
+    });
 });

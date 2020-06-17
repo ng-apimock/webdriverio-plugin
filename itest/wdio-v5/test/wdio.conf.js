@@ -1,5 +1,7 @@
 const path = require('path');
 
+let server;
+
 const config = {
     default_directory: '/tmp',
     specs: [
@@ -12,7 +14,7 @@ const config = {
     cucumberOpts: {
         requireModule: [
             () => {
-                require('ts-node').register({files: true})
+                require('ts-node').register({ files: true });
             }
         ],
         require: [
@@ -21,22 +23,16 @@ const config = {
         ]
     },
     onPrepare: () => {
-        const child_process = require('child_process');
-        const path = require('path');
-        server = child_process.spawn('node',
+        const childProcess = require('child_process');
+        server = childProcess.spawn('node',
             [path.join(__dirname, 'server.js')],
-            {cwd: __dirname, stdio: 'inherit'});
+            { cwd: __dirname, stdio: 'inherit' });
         process.on('exit', () => server.kill());
-    },
-    before: async () => {
-        const chai = require('chai');
-        global.chai = chai;
-        global.expect = chai.expect;
     },
     onComplete: () => {
         server.kill();
     },
-    services: [['ng-apimock', {globalName: 'client'}]]
+    services: [['ng-apimock', { globalName: 'client' }]]
 };
 
 exports.config = config;
