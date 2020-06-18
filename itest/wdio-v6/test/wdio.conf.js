@@ -13,6 +13,7 @@ const config = {
     logLevel: 'error',
     waitforTimeout: 15000,
     cucumberOpts: {
+        timeout: 20000,
         requireModule: [
             () => {
                 require('ts-node').register({ files: true });
