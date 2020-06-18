@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.2...v2.0.3) (2020-06-18)
+
+
+### Bug Fixes
+
+* 🐛 cleanup distribution ([4319b12](https://github.com/ng-apimock/webdriverio-plugin/commit/4319b12443c26c454be4ba31f2c68e2b2685e827))
+
 # 2.0.2 (2020-06-18)
 
 
