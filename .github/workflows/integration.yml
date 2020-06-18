@@ -20,6 +20,12 @@ jobs:
         run: npm ci
       - name: build
         run: npm run compile
+      - name: integration test wdio-v5
+        run: npm run itest5
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+          FORCE_EXIT: true
       - name: integration test wdio-v6
         run: npm run itest6
         env:

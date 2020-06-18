@@ -6,6 +6,7 @@ const defaultBrowserSauceOptions = {
     screenResolution: '1600x1200',
     seleniumVersion: '3.141.59',
 };
+config.maxInstances = 1;
 config.params = {
     environment: 'CI',
     default_directory: '/tmp'
