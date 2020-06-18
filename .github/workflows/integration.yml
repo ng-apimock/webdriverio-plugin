@@ -1,4 +1,4 @@
-name: QA
+name: Integration
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  sonarcloud:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,11 +18,11 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: install
         run: npm ci
-      - name: test
-        run: npm test
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+      - name: build
+        run: npm run compile
+      - name: integration test wdio-v6
+        run: npm run itest6
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
           FORCE_EXIT: true
