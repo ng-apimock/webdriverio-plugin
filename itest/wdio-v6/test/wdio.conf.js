@@ -11,6 +11,7 @@ const config = {
     baseUrl: 'http://127.0.0.1:9999/',
     framework: 'cucumber',
     logLevel: 'error',
+    waitforTimeout: 15000,
     cucumberOpts: {
         requireModule: [
             () => {

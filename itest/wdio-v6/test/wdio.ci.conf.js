@@ -1,5 +1,11 @@
 const { config } = require('./wdio.conf');
 
+const buildIdentifier = process.env.GITHUB_RUN_ID || `Local build-${new Date().getTime()}`;
+const defaultBrowserSauceOptions = {
+    build: buildIdentifier,
+    screenResolution: '1600x1200',
+    seleniumVersion: '3.141.59',
+};
 config.params = {
     environment: 'CI',
     default_directory: '/tmp'
@@ -15,9 +21,9 @@ config.services.push(['sauce', {
     }
 }]);
 
-config.capabilities = [{
-    browserName: 'chrome',
+const chromeOptions = {
     'goog:chromeOptions': {
+        w3c: true,
         args: ['--no-sandbox', '--test-type=browser'],
         prefs: {
             download: {
@@ -26,7 +32,19 @@ config.capabilities = [{
                 default_directory: '/tmp'
             }
         }
-    }
-}];
+    },
+};
+
+config.capabilities = [
+    {
+        browserName: 'googlechrome',
+        platformName: 'Windows 10',
+        browserVersion: 'latest',
+        'sauce:options': {
+            logName: 'chrome-latest',
+            ...defaultBrowserSauceOptions,
+        },
+        ...chromeOptions,
+    }];
 
 exports.config = config;
