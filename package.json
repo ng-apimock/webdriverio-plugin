@@ -1,7 +1,7 @@
 {
     "name": "wdio-ng-apimock-service",
     "description": "Webdriverio plugin for ng-apimock",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "homepage": "https://github.com/ng-apimock/webdriverio-plugin#readme",
     "author": {
         "name": "Mischa Dasberg",
