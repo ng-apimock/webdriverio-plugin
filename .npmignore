@@ -10,8 +10,11 @@ test
 
 # configs
 tsconfig.json
-tslint.json
-jasmine.json
+.eslintrc
+.releaserc
+jest.config.js
+commitlint.config.js
+sonar-project.properties
 
 # idea
 .idea
@@ -19,3 +22,7 @@ jasmine.json
 
 # ci
 .circleci
+
+# integration tests
+itest
+coverage
