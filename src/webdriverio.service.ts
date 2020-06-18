@@ -24,6 +24,6 @@ export default class NgApimockService {
     async before(capabilities: any): Promise<any> {
         const plugin = new WebdriverIOClient(this.baseUrl);
         (global as any)[this.globalName] = plugin;
-        plugin.setNgApimockCookie();
+        await plugin.setNgApimockCookie();
     }
 }
