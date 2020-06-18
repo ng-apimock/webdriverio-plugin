@@ -1,6 +1,6 @@
-import NgApimockService from "./webdriverio.service";
+import { Client } from '@ng-apimock/base-client';
 
-import {Client} from '@ng-apimock/base-client';
+import NgApimockService from './webdriverio.service';
 
-export {Client};
+export { Client };
 export default NgApimockService;

@@ -1,14 +1,18 @@
-import {WebdriverIOClient} from "./webdriverio";
+import { WebdriverIOClient } from './webdriverio';
+
+declare const browser: any;
 
 export default class NgApimockService {
     baseUrl: string;
     globalName: string;
 
     constructor(options: any) {
-         this.globalName = (options && options.globalName)
+        this.globalName = (options && options.globalName)
             ? options.globalName
             : 'ngApimock';
-         this.baseUrl = options.baseUrl;
+        this.baseUrl = (options && options.baseUrl)
+            ? options.baseUrl
+            : browser.config.baseUrl;
     }
 
     /**
@@ -17,7 +21,7 @@ export default class NgApimockService {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    async before(capabilities: any): Promise<any>{
+    async before(capabilities: any): Promise<any> {
         const plugin = new WebdriverIOClient(this.baseUrl);
         (global as any)[this.globalName] = plugin;
         plugin.setNgApimockCookie();
