@@ -11,7 +11,6 @@ config.params = {
     environment: 'CI',
     default_directory: '/tmp'
 };
-config.maxInstances = 5;
 
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
