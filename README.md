@@ -15,10 +15,9 @@ Enable this plugin in your config file:
 
 ```js
 exports.config = {
-    services: [['ng-apimock'],  {
-           globalName: 'ngApimock' // optional option (defaults to ngApimock)  
-       }
-    ]
+    services: [['ng-apimock',  {
+        globalName: 'ngApimock' // optional option (defaults to ngApimock)  
+    }]]
 };
 ```
 
