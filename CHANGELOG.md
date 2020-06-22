@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.3...v2.0.4) (2020-06-22)
+
+
+### Bug Fixes
+
+* 🐛 await for ngapimock init ([589acff](https://github.com/ng-apimock/webdriverio-plugin/commit/589acffa2f0318d61e7ad9d2337889ed92c7fe36)), closes [#6](https://github.com/ng-apimock/webdriverio-plugin/issues/6)
+
 ## [2.0.4](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.3...v2.0.4) (2020-06-21)
 
 
