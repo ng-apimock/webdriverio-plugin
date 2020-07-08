@@ -4,6 +4,7 @@ declare const browser: any;
 
 export default class NgApimockService {
     baseUrl: string;
+    basePath: string;
     globalName: string;
 
     constructor(options: any) {
@@ -13,6 +14,9 @@ export default class NgApimockService {
         this.baseUrl = (options && options.baseUrl)
             ? options.baseUrl
             : browser.config.baseUrl;
+        this.basePath = (options && options.basePath)
+            ? options.basePath
+            : undefined;
     }
 
     /**
@@ -22,7 +26,10 @@ export default class NgApimockService {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     async before(capabilities: any): Promise<any> {
-        const plugin = new WebdriverIOClient(this.baseUrl);
+        const plugin = new WebdriverIOClient({
+            baseUrl: this.baseUrl,
+            basePath: this.basePath
+        });
         (global as any)[this.globalName] = plugin;
         await plugin.setNgApimockCookie();
     }

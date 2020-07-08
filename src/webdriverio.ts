@@ -1,12 +1,12 @@
-import { BaseClient } from '@ng-apimock/base-client';
+import { BaseClient, Configuration } from '@ng-apimock/base-client';
 
 declare const browser: any;
 
 /** Webdriver.io client for apimock. */
 export class WebdriverIOClient extends BaseClient {
     /** Constructor. */
-    constructor(baseUrl: string) {
-        super(baseUrl);
+    constructor(configuration: Configuration) {
+        super(configuration);
     }
 
     /** {@inheritDoc}. */

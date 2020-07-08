@@ -26,12 +26,19 @@ describe('WebdriverIOClient', () => {
         resolveFn = jest.fn();
         rejectFn = jest.fn();
 
-        client = new WebdriverIOClient('http://localhost:9000');
+        client = new WebdriverIOClient({ baseUrl: 'http://localhost:9000' });
     });
 
     describe('constructor', () => {
         it('sets the baseUrl', () => {
             expect(client.baseUrl).toBe('http://localhost:9000/ngapimock');
+        });
+    });
+
+    describe('constructor custom path', () => {
+        it('sets the baseUrl', () => {
+            client = new WebdriverIOClient({ baseUrl: 'http://localhost:9000', basePath: 'myapimock' });
+            expect(client.baseUrl).toBe('http://localhost:9000/myapimock');
         });
     });
 
