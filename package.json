@@ -41,7 +41,7 @@
     "devDependencies": {
         "@commitlint/cli": "9.0.1",
         "@commitlint/config-conventional": "9.0.1",
-        "@ng-apimock/core": "2.0.1",
+        "@ng-apimock/core": "2.1.0",
         "@ng-apimock/test-application": "1.0.17",
         "@semantic-release/changelog": "5.0.1",
         "@semantic-release/commit-analyzer": "8.0.1",
@@ -69,7 +69,7 @@
         "typescript": "3.9.6"
     },
     "dependencies": {
-        "@ng-apimock/base-client": "1.0.16"
+        "@ng-apimock/base-client": "2.0.0"
     },
     "peerDependencies": {
         "webdriverio": ">=5.*"
