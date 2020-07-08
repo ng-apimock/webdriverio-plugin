@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.4...v2.1.0) (2020-07-08)
+
+
+### Features
+
+* 🎸 make endpoints base path configurable ([#35](https://github.com/ng-apimock/webdriverio-plugin/issues/35)) ([ffef80f](https://github.com/ng-apimock/webdriverio-plugin/commit/ffef80fea7de98b27d1795bcdb2ab5ae99d6d131)), closes [#34](https://github.com/ng-apimock/webdriverio-plugin/issues/34)
+
 ## [2.0.4](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.3...v2.0.4) (2020-06-22)
 
 
