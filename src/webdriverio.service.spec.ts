@@ -24,7 +24,7 @@ describe('NgApimockService', () => {
     });
 
     describe('constructor', () => {
-        it('it uses the provided options', () => {
+        it('uses the provided options', () => {
             const service = new NgApimockService({
                 baseUrl: 'http://localhost:9000',
                 globalName: 'client'
@@ -34,7 +34,7 @@ describe('NgApimockService', () => {
             expect(service.baseUrl).toBe('http://localhost:9000');
         });
 
-        it('it uses the defaults', () => {
+        it('uses the defaults', () => {
             const service = new NgApimockService({});
 
             expect(service.globalName).toBe('ngApimock');
@@ -50,7 +50,7 @@ describe('NgApimockService', () => {
             await service.before({});
         });
 
-        it('it makes the plugin globally available', async () => {
+        it('makes the plugin globally available', async () => {
             expect((global as any).ngApimock).toBeDefined();
         });
 
