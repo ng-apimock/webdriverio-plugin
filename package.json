@@ -18,8 +18,8 @@
         "test": "jest --config=jest.config.js -w 1",
         "preitest5": "cd itest/wdio-v5 && yarn install",
         "preitest6": "cd itest/wdio-v6 && npm install",
-        "itest5": "yarn wdio-local --prefix itest/wdio-v5",
-        "itest6": "yarn wdio-local --prefix itest/wdio-v6"
+        "itest5": "yarn wdio-ci --prefix itest/wdio-v5",
+        "itest6": "yarn wdio-ci --prefix itest/wdio-v6"
     },
     "repository": {
         "type": "git",
