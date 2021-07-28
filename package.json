@@ -17,9 +17,11 @@
         "lint-staged": "lint-staged",
         "test": "jest --config=jest.config.js -w 1",
         "preitest5": "cd itest/wdio-v5 && yarn install",
-        "preitest6": "cd itest/wdio-v6 && npm install",
+        "preitest6": "cd itest/wdio-v6 && yarn install",
+        "preitest7": "cd itest/wdio-v7 && yarn install",
         "itest5": "yarn --cwd itest/wdio-v5 wdio-ci",
-        "itest6": "yarn --cwd itest/wdio-v6 wdio-ci"
+        "itest6": "yarn --cwd itest/wdio-v6 wdio-ci",
+        "itest7": "yarn --cwd itest/wdio-v7 wdio-ci"
     },
     "repository": {
         "type": "git",
@@ -43,7 +45,7 @@
         "@commitlint/cli": "13.1.0",
         "@commitlint/config-conventional": "13.1.0",
         "@ng-apimock/core": "3.0.3",
-        "@ng-apimock/test-application": "3.0.0",
+        "@ng-apimock/test-application": "3.1.0",
         "@semantic-release/changelog": "5.0.1",
         "@semantic-release/commit-analyzer": "8.0.1",
         "@semantic-release/git": "9.0.0",
