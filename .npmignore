@@ -5,8 +5,9 @@ src
 scripts
 
 # test
-**/*.spec.*
 test
+**/*.spec.*
+jest.config.js
 
 # configs
 tsconfig.json
@@ -21,8 +22,11 @@ sonar-project.properties
 *.iml
 
 # ci
-.circleci
+.github
 
 # integration tests
 itest
 coverage
+
+# other
+docs

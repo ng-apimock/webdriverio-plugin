@@ -1,5 +1,5 @@
+import { After, Given, When } from '@cucumber/cucumber';
 import { Client } from '@ng-apimock/base-client';
-import { After, Given, When } from 'cucumber';
 import * as WebdriverIOAsync from 'webdriverio';
 
 const path = require('path');
@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const expect = require('jest-matchers');
 
-declare const browser: WebdriverIOAsync.BrowserObject;
+declare const browser: WebdriverIOAsync.Browser<any>;
 declare const client: Client;
 
 const mocksDirectory = path.join(require.resolve('@ng-apimock/test-application'), '..', 'mocks');
