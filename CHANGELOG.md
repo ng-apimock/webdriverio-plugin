@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.1.0...v3.0.0) (2021-07-28)
+
+
+### Code Refactoring
+
+* 💡 update to latest test-application version ([#308](https://github.com/ng-apimock/webdriverio-plugin/issues/308)) ([1f77972](https://github.com/ng-apimock/webdriverio-plugin/commit/1f779729afde83e7b72040d80d52bb8ce88e10fc))
+
+
+### BREAKING CHANGES
+
+* 🧨 update to latest test-application-version
+
+* ci: 🎡 update itest scripts to run ci profile
+
+* ci: 🎡 update itest scripts
+
+* feat: 🎸 test webdriverio support for create-preset
+* 🧨 update to v3.*
+
+* ci: 🎡 add ci files
+
+* ci: 🎡 fix integration action
+
+* test: 💍 add delay before refresh
+
 # [2.1.0](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.0.4...v2.1.0) (2020-07-08)
 
 
