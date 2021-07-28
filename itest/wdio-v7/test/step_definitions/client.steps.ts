@@ -1,5 +1,5 @@
-import { Client } from '@ng-apimock/base-client';
 import { After, Given, When } from '@cucumber/cucumber';
+import { Client } from '@ng-apimock/base-client';
 import * as WebdriverIOAsync from 'webdriverio';
 
 const path = require('path');

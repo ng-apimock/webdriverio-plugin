@@ -3,7 +3,6 @@ import * as path from 'path';
 import {
     Before, Given, Then, When
 } from '@cucumber/cucumber';
-
 import * as fs from 'fs-extra';
 import * as WebdriverIOAsync from 'webdriverio';
 
@@ -35,6 +34,7 @@ Given(/^I open the page/, async () => {
 
 Given(/^I refresh/, async () => {
     await browser.keys('Escape');
+    await browser.pause(200);
     await PagePO.refresh();
 });
 

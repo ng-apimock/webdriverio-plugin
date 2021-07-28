@@ -34,6 +34,7 @@ Given(/^I open the page/, async () => {
 
 Given(/^I refresh/, async () => {
     await browser.keys('Escape');
+    await browser.pause(200);
     await PagePO.refresh();
 });
 
