@@ -34,6 +34,9 @@ Feature: Update variables state
     Then the following repositories are shown:
       | name  | description  |
       | dummy | dummy module |
+    And the following variables state:
+      | key               | value        |
+      | dummy-description | dummy module |
 
   # When adding a variable the following things will be tested:
   # - add variable
@@ -48,6 +51,9 @@ Feature: Update variables state
     Then the following repositories are shown:
       | name | description            |
       | core | ng-apimock core module |
+    And the following variables state:
+      | key              | value                  |
+      | core-description | ng-apimock core module |
 
   # When updating a variable the following things will be tested:
   # - add variable
@@ -55,6 +61,13 @@ Feature: Update variables state
   Scenario: Update a variable -> (interpolated response)
     Given I open the page
     When I add variable core-description with value ng-apimock core module
+    And I refresh
+    Then the following repositories are shown:
+      | name | description            |
+      | core | ng-apimock core module |
+    And the following variables state:
+      | key              | value                  |
+      | core-description | ng-apimock core module |
     When I update variable core-description with value updated ng-apimock core module
     And I refresh
     Then the following repositories are shown:
@@ -70,9 +83,10 @@ Feature: Update variables state
   Scenario: Delete a variable and get the items (interpolated)
     Given I open the page
     When I add variable core-description with value ng-apimock core module
+    And I refresh
     Then the following repositories are shown:
-      | name | description                    |
-      | core | updated ng-apimock core module |
+      | name | description            |
+      | core | ng-apimock core module |
     When I delete variable core-description
     And I refresh
     Then the following repositories are shown:
