@@ -66,7 +66,7 @@
         "eslint-plugin-jest": "24.4.0",
         "fs-extra": "10.0.0",
         "http-proxy-middleware": "^2.0.1",
-        "husky": "7.0.1",
+        "husky": "7.0.2",
         "jest": "27.0.6",
         "jest-createspyobj": "2.0.0",
         "jest-matchers": "20.0.3",
