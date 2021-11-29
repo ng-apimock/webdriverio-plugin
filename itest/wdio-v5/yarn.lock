@@ -39,14 +39,14 @@
     url-join "4.0.1"
     uuid "8.3.2"
 
-"@ng-apimock/core@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@ng-apimock/core/-/core-3.3.0.tgz#91f64d14d307899ab61c6aaa2d952dd41bf4d163"
-  integrity sha512-6CrOJcMeIYOrMYtvrTyTbFl2JaGp+d2ha5oHPPo18kGEB5KfR46sHNWaftjTIG66isbXU+4f1HiDjkgo8AJbIA==
+"@ng-apimock/core@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@ng-apimock/core/-/core-3.4.0.tgz#500f160982d73359ba06649438fa8eabca2c6f47"
+  integrity sha512-CMeWA6OC85lwMCcxbW7RhQ9HURhn0QwPyjF9cRN9+LNQuAJPXHJzOXfX9Lb4N5a0ePnX84g9oJ2YGWbquS3Elg==
   dependencies:
     body-parser "1.19.0"
     chokidar "3.5.2"
-    debug "4.3.2"
+    debug "4.3.3"
     fs-extra "10.0.0"
     glob "7.2.0"
     inversify "6.0.1"
@@ -54,10 +54,10 @@
     reflect-metadata "0.1.13"
     uuid "8.3.2"
 
-"@ng-apimock/test-application@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@ng-apimock/test-application/-/test-application-3.2.0.tgz#175a553badfea38f42181f95302b1cdccd37623d"
-  integrity sha512-VljsH2GO75fZl90s+uMDZ9GRNVIu4qz7liYzsYJe4xCleXjipTDKsLYbmMm5ubIKAeXp5UYEOOeD+1vXrpTXUg==
+"@ng-apimock/test-application@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@ng-apimock/test-application/-/test-application-3.3.0.tgz#b686b10902a0099b3f5142615093a1f1043e9476"
+  integrity sha512-ZXopTeOPhJyiWGzahPJStPuopel6Ngohd5qsIkc1mj1av7lReuFH/FpR4MCbDB393levEiuYKCsIB7w5mCR3qg==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -1191,10 +1191,17 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@4.3.2:
+debug@4:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
+  dependencies:
+    ms "2.1.2"
+
+debug@4.3.3:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
+  integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
   dependencies:
     ms "2.1.2"
 
