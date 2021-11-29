@@ -19,9 +19,9 @@
         "preitest5": "cd itest/wdio-v5 && yarn install",
         "preitest6": "cd itest/wdio-v6 && yarn install",
         "preitest7": "cd itest/wdio-v7 && yarn install",
-        "itest5": "yarn --cwd itest/wdio-v5 wdio-local",
-        "itest6": "yarn --cwd itest/wdio-v6 wdio-local",
-        "itest7": "yarn --cwd itest/wdio-v7 wdio-local",
+        "itest5": "yarn --cwd itest/wdio-v5 wdio-ci",
+        "itest6": "yarn --cwd itest/wdio-v6 wdio-ci",
+        "itest7": "yarn --cwd itest/wdio-v7 wdio-ci",
         "semantic-release": "semantic-release"
     },
     "repository": {
