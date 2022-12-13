@@ -19,7 +19,7 @@
         "@wdio/sauce-service": "5.22.5",
         "cucumber": "6.0.5",
         "cucumberjs-junitxml": "1.0.0",
-        "express": "4.17.1",
+        "express": "4.17.3",
         "fs-extra": "10.0.0",
         "jest-matchers": "20.0.3",
         "rimraf": "3.0.2",
