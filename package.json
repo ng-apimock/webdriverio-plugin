@@ -18,8 +18,8 @@
         "test": "jest --config=jest.config.js -w 1",
         "preitest7": "cd itest/wdio-v7 && yarn install",
         "preitest8": "cd itest/wdio-v8 && yarn install",
-        "itest7": "yarn --cwd itest/wdio-v7 wdio-local",
-        "itest8": "yarn --cwd itest/wdio-v8 wdio-local",
+        "itest7": "yarn --cwd itest/wdio-v7 wdio-ci",
+        "itest8": "yarn --cwd itest/wdio-v8 wdio-ci",
         "semantic-release": "semantic-release"
     },
     "repository": {
