@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/ng-apimock/webdriverio-plugin/compare/v3.0.0...v3.0.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* 🐛 Patch to support wdio-v8 ([#641](https://github.com/ng-apimock/webdriverio-plugin/issues/641)) ([47a392e](https://github.com/ng-apimock/webdriverio-plugin/commit/47a392eb9799330b0f28ae7daae8bac3e064359b))
+
 # [3.0.0](https://github.com/ng-apimock/webdriverio-plugin/compare/v2.1.0...v3.0.0) (2021-07-28)
 
 
