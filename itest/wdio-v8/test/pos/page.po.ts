@@ -16,7 +16,7 @@ export class PagePO {
 
     static get repositoryData() {
         return PagePO.repositories
-            .then((value: WebdriverIOAsync.Element) => value.$$('<mat-row />')
+            .then((value: Element) => value.$$('<mat-row />')
                 .then(async (value1: WebdriverIOAsync.ElementArray) => await Promise.all(value1.map(async (row: WebdriverIOAsync.Element) => ({
                     name: await (await row.$('.mat-column-name')).getText(),
                     url: await (await row.$('.mat-column-html_url')).getText(),
@@ -42,7 +42,7 @@ export class PagePO {
             .then((value: WebdriverIOAsync.Element) => value.$$('<mat-row />'))
             .then(async (value1: WebdriverIOAsync.ElementArray) => {
                 const elements = await Promise.all(value1);
-                return elements.find(async (el) => {
+                return elements.find(async (el: WebdriverIOAsync.Element) => {
                     const text = await (await el.$('.mat-column-name')).getText();
                     return text === name;
                 });
@@ -64,6 +64,6 @@ export class PagePO {
     }
 
     static error() {
-        return browser.$('.mat-dialog-title');
+        return browser.$('.mdc-dialog__title');
     }
 }

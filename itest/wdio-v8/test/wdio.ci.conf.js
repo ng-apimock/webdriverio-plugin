@@ -7,21 +7,17 @@ const defaultBrowserSauceOptions = {
     seleniumVersion: '3.141.59',
 };
 config.maxInstances = 5;
-config.params = {
-    environment: 'CI',
-    default_directory: '/tmp'
-};
+process.env.wdioEnvironment = 'CI';
+process.env.wdioDefaultDirectory = '/tmp';
 
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
-config.sauceConnect = true;
-config.sauceConnectOpts = {
-    verbose: true,
-    connectRetries: 3,
-    connectRetryTimeout: 10000
-};
 
-config.services.push('sauce');
+config.services.push(['sauce', {
+    sauceConnect: true,
+    sauceConnectOpts: {
+    }
+}]);
 
 const chromeOptions = {
     'goog:chromeOptions': {
@@ -48,6 +44,5 @@ config.capabilities = [
         },
         ...chromeOptions,
     }];
-
 
 exports.config = config;

@@ -11,12 +11,21 @@ export default class NgApimockService {
         this.globalName = (options && options.globalName)
             ? options.globalName
             : 'ngApimock';
-        this.baseUrl = (options && options.baseUrl)
-            ? options.baseUrl
-            : browser.config.baseUrl;
-        this.basePath = (options && options.basePath)
-            ? options.basePath
-            : undefined;
+        this.baseUrl = this.getBaseUrl(options);
+    }
+
+    private getBaseUrl(options: any): string {
+        if (options && options.baseUrl) {
+            return options.baseUrl;
+        }
+        if (browser.config && browser.config.baseUrl) {
+            // pre wdio v8
+            return browser.config.baseUrl;
+        }
+        if (browser.options && browser.options.baseUrl) {
+            return browser.options.baseUrl;
+        }
+        return undefined;
     }
 
     /**

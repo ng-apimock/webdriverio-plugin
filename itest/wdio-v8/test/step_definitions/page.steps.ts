@@ -2,7 +2,7 @@ import * as path from 'path';
 
 import {
     Before, Given, Then, When
-} from 'cucumber';
+} from '@cucumber/cucumber';
 import * as fs from 'fs-extra';
 import * as WebdriverIOAsync from 'webdriverio';
 
@@ -10,7 +10,7 @@ import { PagePO, Repository } from '../pos/page.po';
 
 const expect = require('jest-matchers');
 
-declare const browser: WebdriverIOAsync.BrowserObject;
+declare const browser: WebdriverIOAsync.Browser<any>;
 
 const mocksDirectory = path.join(require.resolve('@ng-apimock/test-application'), '..', 'mocks');
 let responses: any;
@@ -74,7 +74,7 @@ Then(/^the repository is added$/, async () => {
 });
 
 When(/^An error with message (.*) has occured$/, async (message: string) => {
-    await (await PagePO.error()).waitForExist(5000);
+    await (await PagePO.error()).waitForExist({ timeout: 5000 });
     expect(await (await PagePO.error()).getText()).toEqual(message);
 });
 
@@ -88,12 +88,12 @@ Then(/^the repositories are not yet fetched$/, async () => {
 
 Then(/^the README is downloaded$/, async () => {
     await browser.waitUntil(async () => {
-        const { params } = (browser as any).config;
-        if (fs.existsSync(`${params.default_directory}/README.md`)) {
-            const actual = fs.readFileSync(`${params.default_directory}/README.md`);
+        const { wdioDefaultDirectory } = process.env;
+        if (fs.existsSync(`${wdioDefaultDirectory}/README.md`)) {
+            const actual = fs.readFileSync(`${wdioDefaultDirectory}/README.md`);
             const expected = fs.readFileSync(path.join(mocksDirectory, responses.readme.ok.file));
             return actual.equals(expected);
         }
-        return params.environment === 'CI';
-    }, 5000, 'expected download to be completed');
+        return process.env.wdioEnvironment === 'CI';
+    }, { timeout: 5000, timeoutMsg: 'expected download to be completed' });
 });

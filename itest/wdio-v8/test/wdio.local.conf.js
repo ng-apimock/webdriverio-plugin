@@ -1,11 +1,12 @@
 const { config } = require('./wdio.conf');
 
-config.params = {
-    environment: 'LOCAL',
-    default_directory: '/tmp'
-};
+config.runner = 'local';
+process.env.wdioEnvironment = 'LOCAL';
+process.env.wdioDefaultDirectory = '/tmp';
 
-config.seleniumAddress = 'http://localhost:4444/wd/hub';
+config.hostname = 'localhost';
+config.port = 4444;
+config.path = '/wd/hub';
 config.capabilities = [{
     browserName: 'chrome',
     'goog:chromeOptions': {

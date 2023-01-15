@@ -50,19 +50,19 @@ When(/^I download the readme for the repository (.*)$/, async (repository: strin
 
 Then(/^the following repositories are shown:$/, async (dataTable: { rows: Function }) => {
     PagePO.waitForRepositoriesPresent();
-    //
-    // const repositories = await PagePO.repositoryData;
-    // dataTable.rows()
-    //     .forEach((row: any) => {
-    //         expect(repositories
-    //             .filter((repository: Repository) => repository.name === row[0]).length === 1)
-    //             .toBeTruthy();
-    //         if (row[1]) {
-    //             expect(repositories
-    //                 .filter((repository: Repository) => repository.description === row[1]).length === 1)
-    //                 .toBeTruthy();
-    //         }
-    //     });
+
+    const repositories = await PagePO.repositoryData;
+    dataTable.rows()
+        .forEach((row: any) => {
+            expect(repositories
+                .filter((repository: Repository) => repository.name === row[0]).length === 1)
+                .toBeTruthy();
+            if (row[1]) {
+                expect(repositories
+                    .filter((repository: Repository) => repository.description === row[1]).length === 1)
+                    .toBeTruthy();
+            }
+        });
 });
 
 Then(/^the repository is added$/, async () => {
