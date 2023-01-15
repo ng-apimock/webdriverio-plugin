@@ -9,23 +9,24 @@
         "wdio-local": "wdio test/wdio.local.conf.js"
     },
     "devDependencies": {
-        "@ng-apimock/core": "3.4.0",
-        "@ng-apimock/test-application": "3.3.0",
+        "@ng-apimock/core": "3.6.1",
+        "@ng-apimock/test-application": "3.5.2",
         "@types/cucumber": "6.0.1",
         "@types/fs-extra": "9.0.13",
-        "@wdio/cli": "6.1.25",
-        "@wdio/cucumber-framework": "6.1.22",
-        "@wdio/local-runner": "6.1.25",
-        "@wdio/sauce-service": "6.1.16",
+        "@wdio/cli": "6.12.1",
+        "@wdio/cucumber-framework": "6.11.1",
+        "@wdio/local-runner": "6.12.1",
+        "@wdio/sauce-service": "6.12.1",
         "cucumber": "6.0.5",
         "cucumberjs-junitxml": "1.0.0",
-        "express": "4.17.1",
-        "fs-extra": "10.0.0",
+        "express": "4.18.2",
+        "fs-extra": "10.1.0",
+        "jest-matchers": "20.0.3",
         "rimraf": "3.0.2",
-        "ts-node": "10.4.0"
+        "ts-node": "10.9.1"
     },
     "dependencies": {
-        "@ng-apimock/base-client": "3.1.0"
+        "@ng-apimock/base-client": "3.3.1"
     },
     "peerDependencies": {
         "webdriverio": "6.*"

@@ -11,12 +11,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           registry-url: https://registry.npmjs.org
       - name: install
         run: yarn install --frozen-lockfile
@@ -36,6 +36,12 @@ jobs:
           FORCE_EXIT: true
       - name: integration test wdio-v7
         run: yarn itest7
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+          FORCE_EXIT: true
+      - name: integration test wdio-v8
+        run: yarn itest8
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}

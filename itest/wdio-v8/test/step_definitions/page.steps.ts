@@ -88,12 +88,12 @@ Then(/^the repositories are not yet fetched$/, async () => {
 
 Then(/^the README is downloaded$/, async () => {
     await browser.waitUntil(async () => {
-        const { params } = (browser as any).config;
-        if (fs.existsSync(`${params.default_directory}/README.md`)) {
-            const actual = fs.readFileSync(`${params.default_directory}/README.md`);
+        const { wdioDefaultDirectory } = process.env;
+        if (fs.existsSync(`${wdioDefaultDirectory}/README.md`)) {
+            const actual = fs.readFileSync(`${wdioDefaultDirectory}/README.md`);
             const expected = fs.readFileSync(path.join(mocksDirectory, responses.readme.ok.file));
             return actual.equals(expected);
         }
-        return params.environment === 'CI';
+        return process.env.wdioEnvironment === 'CI';
     }, { timeout: 5000, timeoutMsg: 'expected download to be completed' });
 });

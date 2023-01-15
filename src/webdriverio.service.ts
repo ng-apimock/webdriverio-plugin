@@ -1,4 +1,4 @@
-import { WebdriverIOClient } from './webdriverio';
+import {WebdriverIOClient} from './webdriverio';
 
 declare const browser: any;
 
@@ -13,7 +13,10 @@ export default class NgApimockService {
             : 'ngApimock';
         this.baseUrl = (options && options.baseUrl)
             ? options.baseUrl
-            : browser.config.baseUrl;
+            // Patch for wdio-v8
+            : (browser.config && browser.config.baseUrl)
+                ? browser.config.baseUrl
+                : browser.options.baseUrl;
         this.basePath = (options && options.basePath)
             ? options.basePath
             : undefined;
