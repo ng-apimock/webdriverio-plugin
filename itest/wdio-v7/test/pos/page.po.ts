@@ -42,7 +42,6 @@ export class PagePO {
             .then((value: WebdriverIOAsync.Element) => value.$$('<mat-row />'))
             .then(async (value1: WebdriverIOAsync.ElementArray) => {
                 const elements = await Promise.all(value1);
-                // @ts-ignore
                 return elements.find(async (el: WebdriverIOAsync.Element) => {
                     const text = await (await el.$('.mat-column-name')).getText();
                     return text === name;
