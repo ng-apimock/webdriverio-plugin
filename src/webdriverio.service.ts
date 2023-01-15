@@ -22,8 +22,8 @@ export default class NgApimockService {
             // pre wdio v8
             return browser.config.baseUrl;
         }
-        if (options && options.basePath) {
-            return options.basePath;
+        if (browser.options && browser.options.baseUrl) {
+            return browser.options.baseUrl;
         }
         return undefined;
     }
