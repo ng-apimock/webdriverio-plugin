@@ -67,7 +67,7 @@
         "jest-createspyobj": "2.0.0",
         "jest-matchers": "20.0.3",
         "lint-staged": "13.1.0",
-        "rimraf": "4.0.6",
+        "rimraf": "4.2.0",
         "semantic-release": "20.0.2",
         "serve-static": "1.15.0",
         "ts-jest": "29.0.5",
